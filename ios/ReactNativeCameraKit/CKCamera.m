@@ -87,11 +87,8 @@ RCT_ENUM_CONVERTER(CKCameraZoomMode, (@{
 @property (nonatomic) AVCaptureSession *session;
 @property (nonatomic, readwrite) AVCaptureDeviceInput *videoDeviceInput;
 @property (nonatomic) AVCaptureMovieFileOutput *movieFileOutput;
-//@property (nonatomic) AVCaptureStillImageOutput *stillImageOutput;
-// camera for iphone 15
 @property (nonatomic) AVCapturePhotoOutput *photoImageOutput;
 @property (nonatomic, strong) NSData *capturedImageData;
-// camera for iphone 15 end
 @property (nonatomic, strong) AVCaptureMetadataOutput *metadataOutput;
 @property (nonatomic, strong) NSString *codeStringValue;
 
