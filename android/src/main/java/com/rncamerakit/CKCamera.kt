@@ -160,19 +160,9 @@ class CKCamera(context: ThemedReactContext) : FrameLayout(context), LifecycleObs
                 override fun onOrientationChanged(orientation: Int) {
                     val imageCapture = imageCapture ?: return
                     var newOrientation: Int = imageCapture.targetRotation
-                    if (orientation >= 315 || orientation < 45) {
-                        newOrientation = Surface.ROTATION_0
-                    } else if (orientation in 225..314) {
-                        newOrientation = Surface.ROTATION_90
-                    } else if (orientation in 135..224) {
-                        newOrientation = Surface.ROTATION_180
-                    } else if (orientation in 45..134) {
-                        newOrientation = Surface.ROTATION_270
-                    }
-                    if (newOrientation != imageCapture.targetRotation) {
-                        imageCapture.targetRotation = newOrientation
-                        onOrientationChange(newOrientation)
-                    }
+                    newOrientation = Surface.ROTATION_0
+                    imageCapture.targetRotation = newOrientation
+                    onOrientationChange(newOrientation)
                 }
             }
             orientationListener!!.enable()
